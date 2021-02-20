@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    // if(!isset($_SESSION['user']))
+    //     header('Location:index.php');   
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +18,25 @@
         <div class="forms-container">
             <!-- Sign in  -->
             <div class="signin-signup">
-                <form action="" class="sign-in-form">
-                    <h2 class="title">Sign in</h2>
+            <?php 
+                        if(isset($_GET['err'])){
+                            $err = htmlspecialchars($_GET['err']);
+                            switch($err){
+                                case 'current_password':
+                                    echo "<div class='alert alert-danger'>Le mot de passe actuel est incorrect</div>";
+                                break;
+
+                                case 'success_password':
+                                    echo "<div class='alert alert-success'>Le mot de passe a bien été modifié ! </div>";
+                                break; 
+                            }
+                        }
+                    ?>
+                <form action="connexion.php" class="sign-in-form">
+                    <h2 class="title">Sign in<?php echo $_SESSION['user']; ?></h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username">
+                        <input type="text" placeholder="email">
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
@@ -39,7 +58,7 @@
                     </div>
                 </form>
                 <!-- Sign Up -->
-                <form action="" class="sign-up-form">
+                <form action="inscription.php" class="sign-up-form">
                     <h2 class="title">Sign up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
@@ -47,7 +66,7 @@
                     </div>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="text" placeholder="Email">
+                        <input type="text" placeholder="email">
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
