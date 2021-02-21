@@ -21,7 +21,7 @@
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="text" placeholder="Password">
+                        <input type="password" placeholder="Password">
                     </div>
                     <input type="submit" value="Login" class="btn solid">
 
@@ -39,6 +39,7 @@
                     </div>
                 </form>
                 <!-- Sign Up -->
+                <form action="inscription.php" class="sign-up-form">
                 <?php 
                 if(isset($_GET['reg_err']))
                 {
@@ -94,7 +95,6 @@
                     }
                 }
                 ?>
-                <form action="inscription.php" class="sign-up-form">
                     <h2 class="title">Sign up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
@@ -106,11 +106,11 @@
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="text" placeholder="Password">
+                        <input type="password" placeholder="Password">
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="text" placeholder="Confirm your Password">
+                        <input type="password" placeholder="Confirm your Password">
                     </div>
                     <input type="submit" value="Sign" class="btn solid">
                     <!-- Social icon -->

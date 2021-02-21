@@ -40,7 +40,7 @@
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="text" placeholder="Password">
+                        <input type="password" placeholder="Password">
                     </div>
                     <input type="submit" value="Login" class="btn solid">
 
